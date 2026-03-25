@@ -304,13 +304,9 @@ function search(query){
       const safeCode = c.c.replace(/'/g, "");
       return `<div class="code-row">
         <div class="code-row-desc">${desc}</div>
-        <div class="code-row-meta">
-          <span class="code-val">${c.c}</span>
-          <div class="code-rates">${dai}${itbms}${isc}</div>
-        </div>
-        <div class="code-row-action">
-          <button class="btn-copy" onclick="copyIt('${safeCode}',this)">📋 Copiar código</button>
-        </div>
+        <div class="code-val">${c.c}</div>
+        <div class="code-rates">${dai}${itbms}${isc}</div>
+        <button class="btn-copy" onclick="copyIt('${safeCode}',this)">📋 Copiar código</button>
       </div>`;
     }).join('');
     
