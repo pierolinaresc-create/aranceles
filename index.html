@@ -54,8 +54,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(-
 .expand-icon{color:var(--muted);font-size:12px;flex-shrink:0;transition:transform .2s}
 .pcard.open .expand-icon{transform:rotate(180deg)}
 
-.pcard-body{display:none;padding:4px 0}
-.pcard.open .pcard-body{display:block}
+/* pcard-body handled in new css */
 
 /* CODE ROW */
 .code-row{display:grid;grid-template-columns:minmax(160px,auto) 1fr 60px 60px 60px 100px;align-items:center;padding:8px 16px;border-bottom:1px solid #F1F5F9;gap:8px;transition:background .1s}
@@ -303,10 +302,10 @@ function search(query){
       const isc = c.isc > 0 ? `<span class="pct-pill pct-isc"><span class="lbl">ISC</span>${c.isc}%</span>` : '';
       const safeCode = c.c.replace(/'/g, "");
       return `<div class="code-row">
-        <div class="code-row-desc">${desc}</div>
-        <div class="code-val">${c.c}</div>
-        <div class="code-rates">${dai}${itbms}${isc}</div>
-        <button class="btn-copy" onclick="copyIt('${safeCode}',this)">📋 Copiar código</button>
+        <span class="code-val">${c.c}</span>
+        <span class="code-row-desc">${desc}</span>
+        ${dai}${itbms}${isc}
+        <button class="btn-copy" onclick="copyIt('${safeCode}',this)">Copiar</button>
       </div>`;
     }).join('');
     
