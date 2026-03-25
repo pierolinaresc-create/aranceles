@@ -303,13 +303,13 @@ function search(query){
       const isc = c.isc > 0 ? `<span class="pct-pill pct-isc"><span class="lbl">ISC</span>${c.isc}%</span>` : '';
       const safeCode = c.c.replace(/'/g, "");
       return `<div class="code-row">
-        <div class="code-row-top">
-          <span class="code-desc">${desc}</span>
-        </div>
-        <div class="code-row-bottom">
+        <div class="code-row-desc">${desc}</div>
+        <div class="code-row-meta">
           <span class="code-val">${c.c}</span>
-          ${dai}${itbms}${isc}
-          <button class="btn-copy" onclick="copyIt('${safeCode}',this)">Copiar</button>
+          <div class="code-rates">${dai}${itbms}${isc}</div>
+        </div>
+        <div class="code-row-action">
+          <button class="btn-copy" onclick="copyIt('${safeCode}',this)">📋 Copiar código</button>
         </div>
       </div>`;
     }).join('');
